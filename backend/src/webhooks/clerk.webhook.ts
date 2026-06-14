@@ -1,4 +1,5 @@
-import express, { Request, Response } from "express";
+import express from "express";
+import type { Request, Response } from "express";
 import User from "../models/user.model.js";
 import { verifyWebhook } from "@clerk/backend/webhooks";
 // Clerk 웹훅 이벤트의 정확한 타입을 가져옵니다.
