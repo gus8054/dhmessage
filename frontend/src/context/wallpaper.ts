@@ -7,7 +7,6 @@ export interface WallpaperContextValue {
   setWallpaperId: (id: string) => void;
   wallpaper: Wallpaper;
   frameStyle: CSSProperties;
-  // Provider에서 추가로 내려주는 값(예: changeWallpaper 함수 등)이 있다면 여기에 추가해 주세요.
 }
 
 export const WallpaperContext = createContext<WallpaperContextValue | null>(

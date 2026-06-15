@@ -17,9 +17,7 @@ interface WallpaperProviderProps {
   children: ReactNode;
 }
 
-export function WallpaperProvider({
-  children,
-}: WallpaperProviderProps): JSX.Element {
+export function WallpaperProvider({ children }: WallpaperProviderProps) {
   // useState에 제네릭<string>을 사용하여 상태 타입을 명시합니다.
   const [wallpaperId, setWallpaperIdState] = useState<string>(
     readStoredWallpaperId,

@@ -1,19 +1,11 @@
-import {
-  useEffect,
-  useLayoutEffect,
-  useState,
-  type JSX,
-  type ReactNode,
-} from "react";
-import { DEFAULT_THEME_PRESET_ID } from "../data/herouiThemePresets"; // 경로 확인 필요
+import { useEffect, useLayoutEffect, useState, type ReactNode } from "react";
+import { DEFAULT_THEME_PRESET_ID } from "../data/herouiThemePresets";
 import {
   applyThemePresetToDocument,
   isValidThemePreset,
   ThemeContext,
+  type Theme,
 } from "./theme"; // 파일명/경로 확인 필요
-
-// 1. 테마 상태는 무조건 "light" 아니면 "dark"만 존재하므로 리터럴 타입으로 묶어줍니다.
-export type Theme = "light" | "dark";
 
 function getSystemTheme(): Theme {
   if (typeof window === "undefined") return "light";
@@ -48,7 +40,7 @@ interface ThemeProviderProps {
   children: ReactNode;
 }
 
-export function ThemeProvider({ children }: ThemeProviderProps): JSX.Element {
+export function ThemeProvider({ children }: ThemeProviderProps) {
   // 4. 제네릭을 사용해 state의 타입을 확실하게 지정합니다.
   const [theme, setThemeState] = useState<Theme>(
     () => readStoredTheme() ?? getSystemTheme(),

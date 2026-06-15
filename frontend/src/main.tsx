@@ -1,10 +1,9 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { ClerkProvider } from "@clerk/react";
-import { BrowserRouter } from "react-router";
-import { HeroUIProvider } from "@heroui/react"; // 이전 단계에서 세팅한 UI
 import "./index.css";
 import App from "./App.tsx"; // 확장자 변경 주의!
+import { ClerkProvider } from "@clerk/react";
+import { BrowserRouter } from "react-router";
 
 // 1. Clerk의 Publishable Key를 환경 변수에서 안전하게 가져옵니다.
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
@@ -18,11 +17,9 @@ if (!PUBLISHABLE_KEY) {
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <ClerkProvider publishableKey={PUBLISHABLE_KEY} afterSignOutUrl="/">
-      <HeroUIProvider>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
-      </HeroUIProvider>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </ClerkProvider>
   </StrictMode>,
 );
