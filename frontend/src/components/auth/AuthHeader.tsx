@@ -13,7 +13,7 @@ function AuthHeader() {
             {APP_NAME}
           </p>
           <p className="truncate text-xs text-[#8E8E93] dark:text-[#98989D]">
-            Private session
+            KDH 포트폴리오
           </p>
         </div>
       </div>

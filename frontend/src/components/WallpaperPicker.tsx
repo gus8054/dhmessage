@@ -90,7 +90,7 @@ export function WallpaperPicker() {
           <Modal.Dialog className="max-h-[85dvh] border border-white/10 bg-[#2a2a2c] text-foreground shadow-2xl">
             <Modal.Header className="flex flex-row items-center justify-between gap-3 border-b border-white/10 pb-3">
               <Modal.Heading className="text-lg font-semibold tracking-tight text-white">
-                Backdrop
+                배경 이미지
               </Modal.Heading>
               <Modal.CloseTrigger />
             </Modal.Header>

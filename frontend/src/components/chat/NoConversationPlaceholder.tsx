@@ -11,11 +11,10 @@ export function NoConversationPlaceholder() {
       </div>
       <div className="max-w-76 space-y-2">
         <h2 className="text-[16px] font-semibold tracking-tight sm:text-[17px]">
-          Select a chat to start
+          채팅을 선택하세요
         </h2>
         <p className="text-[13px] leading-relaxed text-muted">
-          Pick a conversation from the list on the left to read messages and
-          reply.
+          메시지를 읽고 보내려면 좌측의 사용자 및 채팅을 클릭하세요.
         </p>
       </div>
     </div>

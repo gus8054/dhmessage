@@ -41,7 +41,7 @@ export function AuthActionPanel() {
           <div className="flex items-center justify-center gap-1.5 text-accent">
             <SparklesIcon className="size-3.5" strokeWidth={2} aria-hidden />
             <span className="text-[11px] font-semibold uppercase tracking-[0.18em]">
-              Secure entry
+              구글계정으로 로그인 / 회원가입
             </span>
           </div>
         </div>
