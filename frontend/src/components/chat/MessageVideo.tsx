@@ -1,35 +1,35 @@
-// import { isImageKitUrl, withTransform } from "../../lib/imagekit";
+import { isImageKitUrl, withTransform } from "../../lib/imagekit";
 
-// // Chat videos are stored on ImageKit, so we let ImageKit optimize delivery
-// // on the fly via URL transformations (compressed + sized for the bubble).
-// const VIDEO_TRANSFORM = "q-80,w-640";
-// const POSTER_TRANSFORM = "q-80,w-640";
+// Chat videos are stored on ImageKit, so we let ImageKit optimize delivery
+// on the fly via URL transformations (compressed + sized for the bubble).
+const VIDEO_TRANSFORM = "q-80,w-640";
+const POSTER_TRANSFORM = "q-80,w-640";
 
-// /** ImageKit can extract a poster frame by appending `/ik-thumbnail.jpg`. */
-// function buildPosterUrl(url: string): string | undefined {
-//   if (!isImageKitUrl(url)) return undefined;
-//   const [path] = url.split("?");
-//   return withTransform(`${path}/ik-thumbnail.jpg`, POSTER_TRANSFORM);
-// }
+/** ImageKit can extract a poster frame by appending `/ik-thumbnail.jpg`. */
+function buildPosterUrl(url: string): string | undefined {
+  if (!isImageKitUrl(url)) return undefined;
+  const [path] = url.split("?");
+  return withTransform(`${path}/ik-thumbnail.jpg`, POSTER_TRANSFORM);
+}
 
-// // 컴포넌트 Props 타입 정의
-// interface MessageVideoProps {
-//   src: string;
-// }
+// 컴포넌트 Props 타입 정의
+interface MessageVideoProps {
+  src: string;
+}
 
-// /** ImageKit-optimized chat video with an auto-generated poster frame. */
-// export function MessageVideo({ src }: MessageVideoProps) {
-//   const optimizedSrc = withTransform(src, VIDEO_TRANSFORM);
-//   const posterSrc = buildPosterUrl(src);
+/** ImageKit-optimized chat video with an auto-generated poster frame. */
+export function MessageVideo({ src }: MessageVideoProps) {
+  const optimizedSrc = withTransform(src, VIDEO_TRANSFORM);
+  const posterSrc = buildPosterUrl(src);
 
-//   return (
-//     <video
-//       src={optimizedSrc}
-//       poster={posterSrc}
-//       controls
-//       playsInline
-//       preload="metadata"
-//       className="mb-1.5 max-h-52 max-w-full rounded-lg object-contain sm:max-h-64 sm:rounded-xl"
-//     />
-//   );
-// }
+  return (
+    <video
+      src={optimizedSrc}
+      poster={posterSrc}
+      controls
+      playsInline
+      preload="metadata"
+      className="mb-1.5 max-h-52 max-w-full rounded-lg object-contain sm:max-h-64 sm:rounded-xl"
+    />
+  );
+}
