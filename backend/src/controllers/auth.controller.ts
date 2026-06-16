@@ -11,7 +11,7 @@ export async function checkAuth(
     res.status(401).json({ message: "Unauthorized" });
     return;
   }
-
+  console.log(req.user);
   // 앞서 전역으로 설정한 user?: UserType 덕분에 에러가 나지 않고 자동완성됩니다!
   res.status(200).json(req.user);
 }
